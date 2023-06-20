@@ -1,0 +1,17 @@
+.pokemon {
+    &__logo {
+        width: 17%;
+    }
+    &__list {
+        max-height: 500px;
+    }
+    &__li {
+        cursor: pointer;
+        &:hover {
+            background: #e2e2e2;
+        }
+    }
+    &__bola {
+        width: 10%;
+    }
+}

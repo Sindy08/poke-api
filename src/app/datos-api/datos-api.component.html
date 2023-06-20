@@ -1,0 +1,22 @@
+<div class="container text-light py-4">
+    <h2 class="text-center py-2">
+        <img src="../assets/images/pokemon_logo.png" alt="Pokémon" class="pokemon__logo">
+    </h2>
+    <p class="text-center">¡Atrapa la aventura con la Pokebola, selecciona una!</p>
+    <div class="col-12 d-flex justify-content-evenly" *ngIf="pokemonList">
+        <div class="col-4 overflow-auto pokemon__list">
+            <ul class="list-group">
+                <li *ngFor="let pokemon of pokemonList d-flex align-items-center" (click)="getPokemonDetails(pokemon.url)" class="list-group-item text-capitalize pokemon__li">
+                    <img src="../assets/images/pokeball.png" alt="Pokebola" class="pokemon__bola">
+                    {{ pokemon.name }}
+                </li>
+            </ul>
+        </div>
+        <div *ngIf="selectedPokemon" class="col-5">
+            <div class="card">
+                <h2 class="text-center text-capitalize">{{ selectedPokemon.name }}</h2>
+                <img [src]="selectedPokemon?.sprites?.other?.['official-artwork']?.front_shiny" alt="Imagen del Pokemon">
+            </div>
+        </div>
+    </div>
+</div>
